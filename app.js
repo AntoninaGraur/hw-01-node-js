@@ -33,10 +33,10 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
     console.log(error);
   }
 };
+invokeAction({ action: "add" });
+// const actionIndex = process.argv.indexOf("--action");
 
-const actionIndex = process.argv.indexOf("--action");
-
-if (actionIndex !== -1) {
-  const action = process.argv[actionIndex + 1];
-  invokeAction({ action });
-}
+// if (actionIndex !== -1) {
+//   const action = process.argv[actionIndex + 1];
+//   invokeAction({ action });
+// }
