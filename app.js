@@ -1,4 +1,5 @@
 import contactsServices from "./contacts/index.js";
+import yargs from "yargs";
 
 const invokeAction = async ({ action, id, name, email, phone }) => {
   try {
@@ -33,10 +34,6 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
     console.log(error);
   }
 };
-invokeAction({ action: "add" });
-// const actionIndex = process.argv.indexOf("--action");
 
-// if (actionIndex !== -1) {
-//   const action = process.argv[actionIndex + 1];
-//   invokeAction({ action });
-// }
+const { argv } = yargs(process.argv.slice(2));
+invokeAction(argv);
